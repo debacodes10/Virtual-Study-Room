@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (orientation: landscape) and (min-width: 720px) {
+    .musicMainContainer {
+        width: 45%;
+        height: 500px;
+        padding: 25px;
+        border-radius: 25px;
+        background: #DC8AFA;
+        box-shadow: 3px 3px 4px 2px rgba(0, 0, 0, 0.25);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .nowPlayingLabel {
+        color: #000;
+        font-family: "Poppins", sans-serif;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    .musicImage {
+        width: 300px;
+        height: 300px;
+        border-radius: 50px;
+        background: #FF9696;
+        box-shadow: 3px 3px 4px 2px rgba(0, 0, 0, 0.25);
+
+    }
+}

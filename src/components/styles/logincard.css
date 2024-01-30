@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (orientation: landscape) and (min-width: 720px) {
+    .loginCardContainer {
+        height: 550px;
+        width: 58%;
+        border-radius: 25px;
+        border: 2px solid #EB21D6;
+        background-color: rgba(252, 252, 252, 0.50);
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .loginLabelText {
+        font-family: "Roboto", monospace;
+        color: #000;
+        font-size: 42px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-bottom: 16px;
+    }
+
+    .toRegisterLabel, .toRegisterLinkLabel {
+        font-family: "Inter", monospace;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .toRegisterLinkLabel {
+        color: #1A08F3;
+        margin-left: 8px;
+        font-weight: 600;
+    }
+
+    .emailPwdContainer {
+        margin-top: 24px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .emailPwdLabel {
+        color: #000;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        font-weight: 600;
+    }
+
+    .emailPwdInput {
+        width: 100%;
+        padding: 12px 12px;
+        border-radius: 11px;
+        border: 1.5px solid #EB21D6;
+        margin-top: 6px;
+        text-align: center;
+    }
+
+    .loginBtnContainer {
+        width: 200px;
+        height: 50px;
+        padding: 8px 24px;
+        background-image: url("/indexBg.jpeg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        align-self: center;
+        margin-top: 24px;
+        border-radius: 11px;
+    }
+
+    .loginBtnContainer:active{
+        transform: scale(0.95);
+        translate: transform 0.5s ease-out;
+    }
+
+    .loginBtnLabel {
+        color: #FFFCFC;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;
+    }
+
+    .inBetweenLineContainer {
+        margin-top: 24px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .lineBetween {
+        width: 35%;
+        height: 1px;
+        background-color: #909090;
+    }
+
+    .orLoginWithLabel {
+        color: #909090;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .googleSignInBtn {
+        margin-top: 20px;
+        width: 80%;
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        border: 1px solid black;
+        align-self: center;
+        justify-content: center;
+        align-items: center;
+        border-radius: 11px;
+        border: 1.5px solid #1A08F3;
+        background-color: rgba(255, 252, 252, 0.45);
+    }
+
+    .googleSignInBtn:active{
+        transform: scale(0.95);
+        translate: transform 0.3s ease-out;
+    }
+
+    .googleSignInBtnLabel {
+        margin-left: 10px;
+        color: #2D2D2D;
+        font-family: "Roboto", monospace;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+}
