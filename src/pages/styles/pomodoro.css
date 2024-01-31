@@ -15,6 +15,15 @@
         background-size: cover;
     }
 
+    .secondPomodoroContainer {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: fit-content;
+        align-items: center;
+        /* justify-content: center; */
+    }
+
     .pomodoroLabel {
         font-family: "Rubik", sans-serif;
         color: #000;
@@ -24,6 +33,10 @@
         font-weight: 700;
         line-height: normal;
         text-align: center;
+        align-self: center;
+        justify-self: center;
+        transform: translateX(100%);
+        text-decoration: underline;
     }
 
     .secondaryPomodoroContainer {
@@ -36,6 +49,7 @@
     .backBtn {
         height: fit-content;
         width: fit-content;
+        justify-self: left;
     }
 
     .backBtn:hover {

@@ -16,8 +16,10 @@ const pomodoro = () => {
 
   return (
     <div className='mainPomodoroContainer'>
-        <IoMdArrowRoundBack className="backBtn" size={50} onClick={() => {handleBack()}} />
-        <span className='pomodoroLabel'>Pomodoro Timer</span>
+        <div className='secondPomodoroContainer'>
+          <IoMdArrowRoundBack className="backBtn" size={50} onClick={() => {handleBack()}} />
+          <span className='pomodoroLabel'>Pomodoro Timer</span>
+        </div>
         <div className='secondaryPomodoroContainer'>
             <Pomodro />
             <MusicPlayer />

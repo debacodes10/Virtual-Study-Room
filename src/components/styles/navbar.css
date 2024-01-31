@@ -33,6 +33,10 @@
         line-height: normal;
     }
 
+    .navbarLabel:hover {
+        text-decoration: underline;
+    }
+
     .navbarLabelBtn:hover {
         transform: scale(1.1);
         translate: transform 1s ease-out;
@@ -51,5 +55,9 @@
         font-style: normal;
         font-weight: 800;
         line-height: normal;
+    }
+
+    .liveLabel:hover {
+        text-decoration: underline;
     }
 }
