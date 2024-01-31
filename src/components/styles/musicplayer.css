@@ -18,19 +18,60 @@
 
     .nowPlayingLabel {
         color: #000;
-        font-family: "Poppins", sans-serif;
-        font-size: 48px;
+        font-family: "Rubik", sans-serif;
+        font-size: 36px;
         font-style: normal;
         font-weight: 700;
         line-height: normal;
     }
 
     .musicImage {
-        width: 300px;
-        height: 300px;
+        width: 250px;
+        height: 250px;
         border-radius: 50px;
         background: #FF9696;
         box-shadow: 3px 3px 4px 2px rgba(0, 0, 0, 0.25);
-
     }
+
+    .musicTitleLabelContainer {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .musicTitleSelectContainer{
+        font-family: "Poppins", sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;
+        border-radius: 10px;
+        padding: 6px 12px;
+        color: #DC8AFA;
+        background-image: linear-gradient(90deg, #030637, #3C0753, #720455, #910A67);
+    }
+
+    .musicTitleSelectContainer:focus {
+        outline: none;
+    }
+
+    .optionMusicLabel {
+        font-family: "Poppins", sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;
+        color: #DC8AFA;
+    }
+
+    .musicPlayBtnContainer {
+        height: fit-content;
+        width: fit-content;
+        border-radius: 100%;
+        padding: 15px 15px 15px 18px;
+        background-image: linear-gradient(45deg, #030637, #3C0753, #720455, #910A67);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
 }

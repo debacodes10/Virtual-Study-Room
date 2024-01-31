@@ -29,7 +29,22 @@
     .secondaryPomodoroContainer {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-around;
         padding: 0px 20px;
+    }
+
+    .backBtn {
+        height: fit-content;
+        width: fit-content;
+    }
+
+    .backBtn:hover {
+        transform: scale(1.2);
+        translate: transform 0.3s ease-in;
+    }
+
+    .backBtn:focus {
+        transform: scale(0.95);
+        translate: transform 0.3s ease-in;
     }
 }
