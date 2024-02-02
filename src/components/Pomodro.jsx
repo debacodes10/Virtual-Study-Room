@@ -72,7 +72,7 @@ const Pomodro = () => {
         <div className="pomodroMainContainer">
             <div className='menuBtnContainer'>
                 <button onClick={() => handleMenuVisibility()}>
-                    <GiHamburgerMenu size={30} className='menuBtn' />
+                    <GiHamburgerMenu size={30} className='menuBtn' color='#252525'/>
                 </button>
                 {menuVisible ?
                     <div className='pomodroMenuContainer'>

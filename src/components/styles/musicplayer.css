@@ -8,8 +8,8 @@
         height: 500px;
         padding: 10px 25px;
         border-radius: 25px;
-        background: #DC8AFA;
-        box-shadow: 3px 3px 4px 2px rgba(0, 0, 0, 0.25);
+        background-color: rgb(0, 0, 0, 0.1);
+        box-shadow: 3px 3px 4px 2px rgba(0, 0, 0, 0.4);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -23,14 +23,26 @@
         font-style: normal;
         font-weight: 700;
         line-height: normal;
+        opacity: 0.6;
+        text-shadow: 0 0 5px #000, 0 0 5px #252525;
+    }
+
+    .musicImageParent {
+        width: fit-content;
+        height: fit-content;
+        border-radius: 54px;
+        border: 4px solid rgb(225, 225, 220, 0.3);
+        box-shadow: 3px 3px 4px 2px rgba(0, 0, 0, 0.25);
     }
 
     .musicImage {
         width: 250px;
         height: 250px;
         border-radius: 50px;
-        background: #FF9696;
-        box-shadow: 3px 3px 4px 2px rgba(0, 0, 0, 0.25);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        filter: grayscale(0.3) blur(1px);
     }
 
     .musicTitleLabelContainer {
@@ -46,21 +58,26 @@
         line-height: normal;
         border-radius: 10px;
         padding: 6px 6px;
-        color: #DC8AFA;
-        background-image: linear-gradient(90deg, #030637, #3C0753, #720455, #910A67);
+        color: #a8a4a4;
+        text-shadow: 0 0 5px #000, 0 0 5px #252525;
+        background-color: rgb(0, 0, 0, 0.1);
+        box-shadow: 1px 1px 8px 1px rgb(227, 225, 220, 0.2);
     }
 
     .musicTitleSelectContainer:focus {
         outline: none;
+        background-color: rgb(0, 0, 0, 0.1);
     }
 
     .optionMusicLabel {
         font-family: "Poppins", sans-serif;
-        font-size: 18px;
+        font-size: 14px;
         font-style: normal;
-        font-weight: 800;
+        font-weight: 600;
         line-height: normal;
-        color: #DC8AFA;
+        color: #a8a4a4;
+        text-shadow: 0 0 5px #000, 0 0 5px #252525;
+        background-color: rgba(255, 255, 255, 0.8);
     }
 
     .musicPlayBtnContainer {
@@ -68,24 +85,29 @@
         width: fit-content;
         border-radius: 100%;
         padding: 7px 7px 7px 10px;
-        background-image: linear-gradient(45deg, #030637, #3C0753, #720455, #910A67);
+        background-color: rgb(227, 225, 217, 0.2);
         display: flex;
         align-items: center;
         justify-content: center;
+        box-shadow: 1px 1px 8px 1px rgb(227, 225, 220, 0.2);
     }
 
     .musicPlayedContainer {
-        width: 80%;
+        width: 30%;
         height: fit-content;
-        padding: 4px;
+        padding: 2px 2px;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 100px ;
+
     }
 
     .musicPlayedLength {
-        width: 100%;
-        height: 16px;
-        background-image: linear-gradient(45deg, #80BCBD, #AAD9BB, #D5F0C1, #F9F7C9);
-        border-radius: 50px;
-        border: 2px solid #CCCCCC;
+        width: 30%;
+        height: 8px;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        border: 2px solid rgba(255, 255, 255, 0.2);
     }
 
 }

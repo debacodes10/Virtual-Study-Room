@@ -5,12 +5,33 @@ import { IoPlay } from "react-icons/io5";
 import { IoPauseSharp } from "react-icons/io5";
 
 
-const MusicPlayer = () => {
+const MusicPlayer = ({ onSongChange }) => {
 
   const audioRef = useRef()
 
   const [isPlaying, setIsPlaying] = useState(false)
   const [progress, setProgress] = useState(0);
+  const [selectedSong, setSelectedSong] = useState('Ocean Waves');
+  const [musicImage, setMusicImage] = useState("/ocean-waves-bg.jpg")
+  const [labelColor, setLabelTextColor] = useState('#3C6E91');
+
+  const selectValue = ['Ocean Waves', 'Rainy Day', 'Chirping Crickets'];
+  const musicPath = {
+    'Ocean Waves': '/sea-waves.wav',
+    'Rainy Day': '/rain_and_thunder.wav',
+    'Chirping Crickets': '/chirping-crickets.mp3',
+  };
+
+  const bgPath = {
+    'Ocean Waves': '/ocean-waves-bg.jpg',
+    'Rainy Day': '/rainy-day-bg.jpg',
+    'Chirping Crickets': '/chirping-crickets-bg.jpg',
+  };
+  const labelTextColor = {
+    'Ocean Waves': '#3C6E91',
+    'Rainy Day': '#55617A',
+    'Chirping Crickets': '#CCC',
+  };
 
   const play = () => {
     if (audioRef.current) {
@@ -35,36 +56,59 @@ const MusicPlayer = () => {
     setProgress(currentProgress);
   };
 
+  const handleSelectChange = (event) => {
+    const selectedOption = event.target.value;
+    setSelectedSong(selectedOption);
+    audioRef.current.src = musicPath[selectedOption];
+    const musicBg = bgPath[selectedOption] || "/indexBg.jpeg";
+    const newTextLabelColor = labelTextColor[selectedOption] || '#3C6E91';
+    // Optionally, you may want to pause and reset progress when changing the song
+    pause();
+    setProgress(0);
+    // console.log(selectedSong);
+    onSongChange(selectedOption);
+    setMusicImage(musicBg);
+    setLabelTextColor(newTextLabelColor);
+  };
+
   return (
     <div className='musicMainContainer'>
-        <span className='nowPlayingLabel'>Now Playing</span>
+        <span className='nowPlayingLabel' style={{color: `${labelColor}`}}>Now Playing</span>
         <div className='musicTitleLabelContainer'>
-          <select className='musicTitleSelectContainer'>
-            <option value={"Ocean Waves"} className='optionMusicLabel'>Ocean Waves</option>
-            <option value={"Rainy Day"} className='optionMusicLabel'>Rainy Day</option>
-            <option value={"Chirping Crickets"} className='optionMusicLabel'>Chirping Crickets</option>
-          </select>
+          <select
+          className='musicTitleSelectContainer'
+          onChange={handleSelectChange}
+          value={selectedSong}
+          style={{color: `${labelColor}`}}
+        >
+          {selectValue.map((option) => (
+            <option key={option} value={option} className='optionMusicLabel'>
+              {option}
+            </option>
+          ))}
+        </select>
         </div>
-        <div className='musicImage'></div>
+        <div className='musicImageParent'>
+          <div className='musicImage' style={{backgroundImage: `url(${musicImage})`}}></div>
+        </div>
         <div className='musicPlayedContainer'>
         <div className='musicPlayedLength' style={{ width: `${progress}%` }}></div>
       </div>
-        <button className='musicPlayBtnContainer'>
           {isPlaying ? 
-          <IoPauseSharp size={30} color='#F9EFDB' onClick={pause} />
+          <button className='musicPlayBtnContainer' onClick={pause} >
+          <IoPauseSharp size={30} color='#F9EFDB'/> </button>
           : 
-          <IoPlay size={30} color='#F9EFDB' onClick={play}/>
+          <button className='musicPlayBtnContainer' onClick={play}>
+          <IoPlay size={30} color='#F9EFDB'/> </button>
           }
-          
-        </button>
         <audio
         ref={audioRef}
-        src='/ocean-waves.mp3'
+        src={musicPath[selectedSong]}
         onTimeUpdate={updateProgress}
         onEnded={() => {
           setIsPlaying(false);
           setProgress(0);
-          play()
+          play();
         }}
         loop
       />
@@ -72,4 +116,4 @@ const MusicPlayer = () => {
   )
 }
 
-export default MusicPlayer
+export default MusicPlayer;
