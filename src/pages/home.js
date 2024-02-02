@@ -8,6 +8,7 @@ import { signOut, getAuth } from 'firebase/auth'
 import app from '../../firebase'
 
 import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer';
 
 const auth = getAuth(app)
 
@@ -66,18 +67,18 @@ const home = () => {
           </div>
           <div className='gridContainer'>
             <Image src={("/grid2.png")} alt='' height={400} width={600} className='gridImgs'/>
-            <span className='gridImgLabel'>Create your own Study Room with Your Buddies for an interactive learning experience.</span>
+            <span className='gridImgLabel'>Set Timers to keep track of your schedules.</span>
           </div>
           <div className='gridContainer'>
             <Image src={("/grid3.png")} alt='' height={400} width={600} className='gridImgs'/>
-            <span className='gridImgLabel'>Create your own Study Room with Your Buddies for an interactive learning experience.</span>
+            <span className='gridImgLabel'>Unleash the Web Calculator advantage anytime.</span>
           </div>
           <div className='gridContainer'>
             <Image src={("/grid4.png")} alt='' height={400} width={600} className='gridImgs'/>
-            <span className='gridImgLabel'>Create your own Study Room with Your Buddies for an interactive learning experience.</span>
+            <span className='gridImgLabel'>Use the free Translators for building an inclusive environment.</span>
           </div>
         </div>
-        {/* <button onClick={()=> handleSignOut()}>Log Out</button> */}
+        <Footer />
     </div>
   )
   }

@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind component;
+@tailwind utilities;
+
+@media (orientation: landscape) and (min-width: 720px) {
+    .mainFooterContainer {
+        width: 100%;
+        height: 25vh;
+        background-image: linear-gradient(45deg, #2D3250 ,#424769 ,#7077A1, #F6B17A);
+        border-radius: 25px, 50px, 50px, 0px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 25px;
+        justify-content: space-between;
+    }
+
+    .footerMainLabel {
+        font-family: "Rubik", sans-serif;
+        font-size: 48px;
+        font-weight: 700;
+        color: #CCC;
+    }
+
+    .separatorFooter {
+        width: 4px;
+        height: 100%;
+        background-color: #2D3250;
+    }
+
+    .aboutContainer {
+        width: 25%;
+    }
+
+    .profileFooter {
+        width: 25%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .aboutLabels {
+        font-family: "Rubik", sans-serif;
+        font-size: 15px;
+        font-weight: 600;
+        color: #CCC;;
+    }
+
+    .profileLabel {
+        font-family: "Rubik", sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        color: #252525;
+        margin-bottom: 8px;
+    }
+}

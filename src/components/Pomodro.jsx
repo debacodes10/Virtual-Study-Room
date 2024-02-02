@@ -1,4 +1,3 @@
-// PomodoroTimer.js
 import { useState, useEffect, useRef } from 'react';
 import './styles/pomodro.css';
 
@@ -12,20 +11,41 @@ const Pomodro = () => {
     const [inputTime, setInputTime] = useState("25");
     const [menuVisible, setMenuVisible] = useState(true);
     const [isPaused, setIsPaused] = useState(false); 
-    const [timerStarted, setTimerStarted] = useState(false); 
+    const [timerStarted, setTimerStarted] = useState(false);
+    const [alarmPlayed, setAlarmPlayed] = useState(false); 
 
     const intervalRef = useRef(null);
+    const audioRef = useRef();
+
+    const play = () => {
+        if (audioRef.current) {
+          audioRef.current.play();
+          setAlarmPlayed(true);
+    
+          // Stop the alarm after 5 seconds
+          setTimeout(() => {
+            pause();
+          }, 5000);
+        } else {
+          console.log(error);
+        }
+      }
+
+    const pause = () => {
+    if (audioRef.current) {
+        audioRef.current.pause()
+     } //else() {
+    //     console.log(error)
+    // }
+    }
 
     const handleReset = () => {
         setInitTime(0);
-        setTime(25*60);
+        setTime(25 * 60);
         setInputTime("25");
         setIsPaused(false);
         setTimerStarted(false);
-
-        // Reset the timer to the initial position
-        clearInterval(intervalRef.current);
-        intervalRef.current = null;
+        setAlarmPlayed(false);
     }
 
     const handlePauseTimer = () => {
@@ -49,19 +69,31 @@ const Pomodro = () => {
 
     useEffect(() => {
         let interval;
-
+      
         if (timerStarted && !isPaused) {
-            interval = setInterval(() => {
-                setTime((prevTime) => (prevTime > 0 ? prevTime - 1 : 0));
-            }, 1000);
+          interval = setInterval(() => {
+            setTime((prevTime) => {
+              if (prevTime > 0) {
+                return prevTime - 1;
+              } else {
+                // Play the alarm when timer ends
+                play();
+                return 0;
+              }
+            });
+          }, 1000);
         }
 
-        return () => clearInterval(interval);
-    }, [timerStarted, isPaused]);
+        return () => {
+            clearInterval(interval);
+            pause();
+        };
+    }, [timerStarted, isPaused, alarmPlayed]);
 
     const calculateProgress = () => {
         const percent = ((initTime - time) / initTime) * 100;
         return percent;
+
     }
 
     const rotationStyle = {
@@ -83,7 +115,6 @@ const Pomodro = () => {
                             className='timeInputContainer'
                         />
                         <button className="pauseBtnContainer" onClick={() => { handlePauseTimer() }}>
-
                             {isPaused ?
                                 <IoPlay size={35} color='#252525' />
                                 :
@@ -103,10 +134,16 @@ const Pomodro = () => {
                 <p className='timerCountdownLabel'>Time left: {Math.floor(time / 60).toString().padStart(2, '0')}:{Math.floor(time % 60).toString().padStart(2, '0')}</p>
             </div>
             <div className='circularTimer'>
-                <div className='countdown' style={{ background: `conic-gradient(#FEEE63 ${calculateProgress()}%, transparent ${calculateProgress()}%)` }}>
+                <div className='countdown' style={{ background: `conic-gradient(rgba(255,255,255,0.7) ${calculateProgress()}%, transparent ${calculateProgress()}%)` }}>
                     <div className='indicator' style={rotationStyle}></div>
                 </div>
             </div>
+            <audio
+                ref={audioRef}
+                src={"/alarm_soft.mp3"}
+                onEnded={() => { pause(); }}
+                loop={false}
+            />
         </div>
     );
 };

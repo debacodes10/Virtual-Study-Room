@@ -26,17 +26,13 @@
 
     .pomodoroLabel {
         font-family: "Rubik", sans-serif;
-        font-family: Rubik;
         font-size: 48px;
         font-style: normal;
         font-weight: 700;
         line-height: normal;
-        text-align: center;
-        align-self: center;
-        justify-self: center;
-        transform: translateX(75%);
         opacity: 0.6;
         text-decoration: underline;
+        margin-left: 24px;
         text-shadow: 0 0 3px #000, 0 0 5px #252525;
     }
 
@@ -56,11 +52,11 @@
 
     .backBtn:hover {
         transform: scale(1.2);
-        translate: transform 0.3s ease-in;
+        transition: transform 0.3s ease-in;
     }
 
     .backBtn:focus {
         transform: scale(0.95);
-        translate: transform 0.3s ease-in;
+        transition: transform 0.3s ease-in;
     }
 }

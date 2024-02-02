@@ -40,7 +40,7 @@ input[type=number]::-webkit-outer-spin-button {
     height: 300px;
     width: 300px;
     border-radius: 100%;
-    background-color: #eb993c;
+    background-color: rgba(255, 255, 255, 0.25);
     box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25) inset;
     border: 1px solid #CCCCCC;
     padding: 10px;
@@ -54,7 +54,7 @@ input[type=number]::-webkit-outer-spin-button {
     width: 275px;
     border-radius: 100%;
     transform: rotate(0deg);
-    background-color: #FEEE63;
+    background-color: rgba(255, 255, 255, 0.25);
     box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25) inset;
   }
 

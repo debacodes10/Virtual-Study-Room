@@ -23,7 +23,7 @@ const Pomodoro = () => {
 
   const labelTextColor = {
     'Ocean Waves': '#3C6E91',
-    'Rainy Day': '#55617A',
+    'Rainy Day': '#3C6E91',
     'Chirping Crickets': '#CCC',
   };
 
@@ -39,7 +39,7 @@ const Pomodoro = () => {
     <div className="mainPomodoroContainer" style={{ backgroundImage: `url(${backgroundPath})` }}>
       <div className="secondPomodoroContainer">
         <IoMdArrowRoundBack className="backBtn" style={{ color: `${labelColor}` }} 
-        size={50} onClick={() => { handleBack() }} />
+        size={60} onClick={() => { handleBack() }} />
         <span className="pomodoroLabel" style={{ color: `${labelColor}` }}>
           Pomodoro Timer
         </span>
